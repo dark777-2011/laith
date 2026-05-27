@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ليث البشير | مستشار ضريبي</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   ULTRA LUXURY FUTURE UI
+========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+:root{
+--bg:#07111f;
+--card:#101c31;
+--gold:#00d2ff;
+--gold2:#7c4dff;
+--white:#ffffff;
+--light:#b8b8b8;
+--line:rgba(255,255,255,0.08);
+}
+
+@keyframes backgroundMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+@keyframes floating {
+0%{
+  transform: translate(0px, 0px);
+  opacity: 0.4;
+}
+25%{
+  transform: translate(15px, -20px);
+}
+50%{
+  transform: translate(-10px, -35px);
+  opacity: 0.8;
+}
+75%{
+  transform: translate(10px, -10px);
+}
+100%{
+  transform: translate(0px, 0px);
+  opacity: 0.4;
+}
+}
+
+@keyframes bgFlow{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+body{
+cursor: none;
+}
+
+body{
+font-family:'Cairo',sans-serif;
+background: radial-gradient(circle at 20% 20%, #0d2a4a, transparent 40%),
+            radial-gradient(circle at 80% 30%, #251f42, transparent 45%),
+            radial-gradient(circle at 50% 80%, #0a3a4a, transparent 40%),
+            linear-gradient(120deg,#050b14,#0b1c2f,#050b14);
+background-size: 300% 300%;
+animation: bgFlow 15s ease-in-out infinite;
+color:var(--white);
+overflow-x:hidden;
+}
+
+body{
+background-attachment: fixed;
+}
+
+body::before{
+content:'';
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at 20% 30%, rgba(0,210,255,0.12), transparent 40%),
+radial-gradient(circle at 80% 70%, rgba(124,77,255,0.12), transparent 45%);
+animation: backgroundMove 20s ease-in-out infinite;
+z-index:-3;
+}
+
+body::after{
+content:'';
+position:fixed;
+width:100%;
+height:100%;
+background-image:
+linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+background-size:50px 50px;
+opacity:0.12;
+z-index:-2;
+}
+
+body::after{
+opacity:0.08;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+width:500px;
+height:500px;
+background:radial-gradient(circle,rgba(0,210,255,0.25),transparent 70%);
+right:-150px;
+top:-120px;
+filter:blur(40px);
+}
+
+.hero::after{
+content:'';
+position:absolute;
+width:450px;
+height:450px;
+background:radial-gradient(circle,rgba(124,77,255,0.20),transparent 70%);
+left:-120px;
+bottom:-100px;
+filter:blur(50px);
+}
+
+.glow{
+position:fixed;
+width:700px;
+height:700px;
+background:radial-gradient(circle,var(--gold),transparent 70%);
+filter:blur(120px);
+opacity:0.18;
+animation:pulseGlow 8s infinite ease-in-out;
+z-index:-2;
+}
+
+.particles{
+position:fixed;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:-1;
+pointer-events:none;
+}
+
+.particles span{
+  position:absolute;
+  display:block;
+  width:6px;
+  height:6px;
+  background:rgba(255,255,255,0.35);
+  border-radius:50%;
+  animation:floating 10s ease-in-out infinite;
+}
+
+/* اختلاف بسيط لكل نقطة */
+.particles span:nth-child(odd){
+  animation-duration: 8s;
+  animation-direction: alternate;
+}
+
+.particles span:nth-child(even){
+  animation-duration: 12s;
+  animation-direction: alternate-reverse;
+}
+
+.particles span:nth-child(1){top:10%;left:20%;animation-duration:7s;}
+.particles span:nth-child(2){top:25%;left:80%;animation-duration:9s;}
+.particles span:nth-child(3){top:70%;left:15%;animation-duration:8s;}
+.particles span:nth-child(4){top:80%;left:60%;animation-duration:10s;}
+.particles span:nth-child(5){top:40%;left:45%;animation-duration:6s;}
+.particles span:nth-child(6){top:15%;left:55%;animation-duration:11s;}
+.particles span:nth-child(7){top:55%;left:75%;animation-duration:8s;}
+.particles span:nth-child(8){top:85%;left:35%;animation-duration:7s;}
+.particles span:nth-child(9){top:65%;left:90%;animation-duration:9s;}
+.particles span:nth-child(10){top:35%;left:5%;animation-duration:10s;}
+
+.glow.one{
+top:-250px;
+right:-200px;
+}
+
+.glow.two{
+bottom:-250px;
+left:-200px;
+}
+
+header{
+box-shadow:0 10px 40px rgba(0,0,0,0.25);
+position:fixed;
+top:0;
+right:0;
+width:100%;
+padding:25px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+backdrop-filter:blur(12px);
+background:rgba(7,17,31,0.65);
+border-bottom:1px solid var(--line);
+z-index:999;
+}
+
+.logo{
+font-size:38px;
+font-weight:900;
+letter-spacing:2px;
+background:linear-gradient(90deg,var(--gold),var(--gold2));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+nav{
+display:flex;
+gap:35px;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-weight:700;
+position:relative;
+transition:0.3s;
+}
+
+nav a::after{
+content:'';
+position:absolute;
+right:0;
+bottom:-8px;
+width:0;
+height:2px;
+background:linear-gradient(90deg,var(--gold),var(--gold2));
+transition:0.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+.hero{
+position:relative;
+overflow:hidden;
+min-height:100vh;
+padding:180px 8% 120px;
+display:grid;
+grid-template-columns:1.1fr 0.9fr;
+gap:70px;
+align-items:center;
+}
+
+.tag{
+width:max-content;
+padding:12px 25px;
+border:1px solid rgba(212,175,55,0.3);
+background:rgba(212,175,55,0.08);
+color:var(--gold2);
+border-radius:100px;
+font-weight:700;
+margin-bottom:25px;
+}
+
+.hero h1{
+font-size:95px;
+line-height:1;
+margin-bottom:30px;
+font-weight:900;
+}
+
+.hero h1 span{
+background:linear-gradient(90deg,var(--gold),var(--gold2));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+font-size:19px;
+line-height:2.2;
+color:var(--light);
+max-width:700px;
+margin-bottom:45px;
+}
+
+.buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:18px 38px;
+border-radius:18px;
+font-weight:800;
+text-decoration:none;
+transition:0.35s;
+}
+
+.btn-main{
+background:linear-gradient(135deg,var(--gold),var(--gold2));
+color:black;
+box-shadow:0 10px 40px rgba(212,175,55,0.35);
+}
+
+.btn-main:hover{
+transform:translateY(-6px);
+}
+
+.btn-dark{
+border:1px solid var(--line);
+background:rgba(255,255,255,0.04);
+color:white;
+}
+
+.hero-card{
+position:relative;
+}
+
+.main-card{
+transition:0.5s;
+background:linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03));
+background:linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03));
+border:1px solid rgba(255,255,255,0.08);
+border-radius:40px;
+overflow:hidden;
+backdrop-filter:blur(20px);
+box-shadow:0 40px 120px rgba(0,0,0,0.65);
+animation:floating 7s ease-in-out infinite;
+}
+
+.main-card img{
+width:100%;
+height:340px;
+object-fit:cover;
+}
+
+.card-content{
+padding:40px;
+}
+
+.card-content h2{
+font-size:40px;
+margin-bottom:15px;
+}
+
+.card-content p{
+color:var(--light);
+line-height:2;
+}
+
+.mini-box{
+position:absolute;
+background:#111111;
+border:1px solid rgba(212,175,55,0.2);
+padding:25px 30px;
+border-radius:25px;
+backdrop-filter:blur(15px);
+box-shadow:0 20px 50px rgba(0,0,0,0.5);
+}
+
+.mini-box h3{
+font-size:34px;
+background:linear-gradient(90deg,var(--gold),var(--gold2));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.mini-box p{
+color:var(--light);
+}
+
+.box1{
+right:-40px;
+top:60px;
+}
+
+.box2{
+left:-40px;
+bottom:70px;
+}
+
+section{
+padding:120px 8%;
+}
+
+.title{
+text-align:center;
+margin-bottom:70px;
+}
+
+.title h2{
+font-size:65px;
+margin-bottom:20px;
+}
+
+.title p{
+max-width:750px;
+margin:auto;
+line-height:2;
+color:var(--light);
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:35px;
+}
+
+.service{
+backdrop-filter:blur(18px);
+background:linear-gradient(180deg,#12233d,#0b1730);
+padding:45px;
+border-radius:35px;
+border:1px solid rgba(255,255,255,0.07);
+position:relative;
+overflow:hidden;
+transition:0.45s;
+}
+
+.service:hover{
+transform:translateY(-15px) scale(1.02);
+border-color:rgba(212,175,55,0.35);
+}
+
+.service::before{
+content:'';
+position:absolute;
+width:250px;
+height:250px;
+background:radial-gradient(circle,var(--gold),transparent 70%);
+right:-120px;
+top:-120px;
+opacity:0.15;
+}
+
+.icon{
+width:90px;
+height:90px;
+border-radius:28px;
+background:linear-gradient(135deg,var(--gold),var(--gold2));
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:38px;
+color:black;
+margin-bottom:30px;
+font-weight:900;
+}
+
+.service h3{
+font-size:34px;
+margin-bottom:18px;
+}
+
+.service p{
+line-height:2;
+color:var(--light);
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+margin-top:60px;
+}
+
+.gallery img{
+box-shadow:0 20px 60px rgba(0,0,0,0.35);
+width:100%;
+height:340px;
+object-fit:cover;
+border-radius:30px;
+transition:0.4s;
+filter:brightness(0.82) saturate(1.1);
+}
+
+.gallery img:hover{
+transform:scale(1.03);
+filter:brightness(1);
+}
+
+.contact{
+box-shadow:0 30px 90px rgba(0,0,0,0.45);
+backdrop-filter:blur(18px);
+background:linear-gradient(135deg,rgba(212,175,55,0.12),rgba(255,255,255,0.03));
+border:1px solid rgba(255,255,255,0.08);
+padding:80px;
+border-radius:45px;
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+.contact::before{
+content:'';
+position:absolute;
+width:450px;
+height:450px;
+background:radial-gradient(circle,var(--gold),transparent 70%);
+left:-150px;
+bottom:-150px;
+opacity:0.15;
+}
+
+.contact h2{
+font-size:70px;
+margin-bottom:20px;
+}
+
+.contact p{
+max-width:800px;
+margin:auto;
+line-height:2;
+color:var(--light);
+margin-bottom:45px;
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.contact-item{
+background:rgba(255,255,255,0.05);
+padding:35px;
+border-radius:30px;
+border:1px solid rgba(255,255,255,0.08);
+}
+
+.contact-item h4{
+font-size:25px;
+margin-bottom:12px;
+}
+
+.contact-item span{
+color:var(--light);
+}
+
+footer{
+padding:40px;
+text-align:center;
+color:#888;
+border-top:1px solid rgba(255,255,255,0.06);
+margin-top:100px;
+}
+
+@media(max-width:1100px){
+.hero{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:70px;
+}
+}
+
+@media(max-width:700px){
+nav{
+display:none;
+}
+
+.hero h1,
+.title h2,
+.contact h2{
+font-size:45px;
+}
+
+.hero{
+padding-top:150px;
+}
+
+.contact{
+padding:50px 25px;
+}
+
+.box1,.box2{
+display:none;
+}
+
+footer{
+margin-top:0;
+padding:40px;
+}
+
+body{
+padding-bottom:0;
+margin-bottom:0;
+}
+
+section:last-of-type{
+margin-bottom:0;
+padding-bottom:60px;
+}
+}
+
+.cursor{
+position:fixed;
+width:40px;
+height:40px;
+border:2px solid #00d2ff;
+border-radius:50%;
+pointer-events:none;
+transform:translate(-50%,-50%);
+transition:0.08s;
+z-index:9999;
+backdrop-filter:blur(2px);
+}
+
+.cursor-dot{
+position:fixed;
+width:8px;
+height:8px;
+background:#7c4dff;
+border-radius:50%;
+pointer-events:none;
+transform:translate(-50%,-50%);
+z-index:10000;
+}
+
+.whatsapp-btn{
+  position:fixed;
+  bottom:25px;
+  left:25px;
+  background:linear-gradient(135deg,#25D366,#128C7E);
+  color:white;
+  padding:16px 22px;
+  border-radius:50px;
+  font-weight:800;
+  text-decoration:none;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  z-index:9999;
+  transition:0.3s;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.whatsapp-btn:hover{
+  transform:translateY(-5px) scale(1.05);
+  box-shadow:0 15px 40px rgba(37,211,102,0.4);
+}
+
+header{
+  transition:0.4s ease;
+}
+
+header.hide{
+  transform:translateY(-120%);
+  opacity:0;
+}
+
+.mail-btn{
+  position:fixed;
+  bottom:90px; /* فوق زر الواتس */
+  left:25px;
+  background:linear-gradient(135deg,#b37709,#b37709);
+  color:white;
+  padding:16px 22px;
+  border-radius:50px;
+  font-weight:800;
+  text-decoration:none;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  z-index:9999;
+  transition:0.3s;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.mail-btn:hover{
+  transform:translateY(-5px) scale(1.05);
+  box-shadow:0 15px 40px rgba(124,77,255,0.4);
+}
+
+/* Floating Action Button */
+.fab-container{
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* الزر الرئيسي */
+.fab-main{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: black;
+  cursor: pointer;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  transition: 0.3s;
+}
+
+.fab-main:hover{
+  transform: scale(1.1);
+}
+
+/* القائمة */
+.contact-fixed{
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+
+  display: flex;
+  flex-direction: column; /* 👈 هذا يخليهم فوق بعض */
+  gap: 12px;
+
+  z-index: 9999;
+}
+
+/* الأزرار */
+.contact-fixed a{
+  padding: 12px 16px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 14px;
+
+  color: white;
+  background: rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+
+  transition: 0.3s;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  width: 140px; /* 👈 يخلي الشكل مرتب ثابت */
+}
+
+/* hover */
+.contact-fixed a:hover{
+  transform: translateX(6px); /* حركة جانبية لطيفة */
+  border-color: var(--gold);
+}
+
+/* ألوان */
+.contact-fixed a:nth-child(1){
+  border-color: #25D366;
+}
+
+.contact-fixed a:nth-child(2){
+  border-color: #fc8600;
+}
+
+.contact-fixed a:nth-child(3){
+  border-color: #00d2ff;
+}
+
+.logo img{
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(0,210,255,0.5);
+  box-shadow: 0 0 20px rgba(0,210,255,0.3);
+}
+
+/* ألوان مميزة */
+.fab-item.whatsapp{ border-color: #25D366; }
+.fab-item.email{ border-color: #7c4dff; }
+.fab-item.call{ border-color: #00d2ff; }
+
+</style>
+</head>
+
+<canvas id="stars"></canvas>
+
+<body>
+
+<!-- Floating Contact Button -->
+<div class="contact-fixed">
+  <a href="https://wa.me/962797022292" target="_blank">💬 واتساب</a>
+  <a href="mailto:Laithalbasgeer@yahoo.com">✉ بريد</a>
+  <a href="tel:+962797022292">📞 اتصال</a>
+</div>
+    <div class="cursor"></div>
+<div class="cursor-dot"></div>
+
+<div class="particles">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<div class="glow one"></div>
+<div class="glow two"></div>
+
+<header>
+<div class="logo">
+  <img src="logo.png">
+  <span>ليث البشير</span>
+</div>
+
+<nav>
+<a href="#home">الرئيسية</a>
+<a href="#services">الخدمات</a>
+<a href="#gallery">المعرض</a>
+<a href="#contact">تواصل</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+
+<div>
+<div class="tag">FUTURE FINANCIAL EXPERIENCE</div>
+
+<h1>
+ليث <span>البشير</span><br>
+مستشار ضريبي معتمد لحلول الامتثال والتخطيط الضريبي
+</h1>
+
+<p>
+تجربة محاسبية فاخرة وحديثة مصممة لأصحاب الشركات ورواد الأعمال،
+مع حلول مالية احترافية تجمع بين الدقة، القوة، والرؤية المستقبلية.
+</p>
+
+<div class="buttons">
+<a href="#contact" class="btn btn-main">ابدأ مشروعك</a>
+<a href="#services" class="btn btn-dark">استكشف الخدمات</a>
+</div>
+</div>
+
+<div class="hero-card">
+<div class="main-card">
+<img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1400&auto=format&fit=crop">
+
+<div class="card-content">
+<h2>حلول مالية مستقبلية</h2>
+<p>
+حلول محاسبية احترافية بتصميم عصري فاخر يساعدك على التحكم الكامل
+في الأداء المالي واتخاذ قرارات ذكية بثقة.
+</p>
+</div>
+</div>
+
+<div class="mini-box box1">
+<h3>+150</h3>
+<p>عميل ناجح</p>
+</div>
+
+<div class="mini-box box2">
+<h3>8+</h3>
+<p>سنوات خبرة</p>
+</div>
+</div>
+
+</section>
+
+<section id="services">
+
+<div class="title">
+<h2>الخدمات الاحترافية</h2>
+<p>
+خدمات مالية متطورة للشركات والأفراد بتصميم عصري فاخر يناسب
+أصحاب الأعمال الباحثين عن الاحترافية الحقيقية.
+</p>
+</div>
+
+<div class="services">
+
+<div class="service">
+<div class="icon">📊</div>
+<h3>التقارير المالية</h3>
+<p>
+تقارير دقيقة واحترافية تساعدك على تحليل الأداء المالي واتخاذ أفضل القرارات.
+</p>
+</div>
+
+<div class="service">
+<div class="icon">💼</div>
+<h3>إدارة الحسابات</h3>
+<p>
+تنظيم شامل للحسابات والتدفقات المالية بطريقة حديثة وفعالة.
+</p>
+</div>
+
+<div class="service">
+<div class="icon">📈</div>
+<h3>التحليل المالي</h3>
+<p>
+تحليل احترافي لنمو شركتك واكتشاف فرص التطوير وتقليل المخاطر.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="gallery">
+
+<div class="title">
+<h2>معرض الأعمال</h2>
+<p>
+واجهة فاخرة مستوحاة من مواقع الشركات العالمية الحديثة.
+</p>
+</div>
+
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop">
+<img src="https://www.protax-jordan.com/wp-content/uploads/2021/01/facts-bg-0.jpg?id=1643">
+</div>
+
+</section>
+
+<section id="contact">
+<div class="contact">
+
+<h2>ابدأ رحلتك المالية</h2>
+
+<p>
+ابدأ اليوم مع ليث البشير واحصل على تجربة محاسبية احترافية
+تليق بمستوى أعمالك وطموحاتك المستقبلية.
+</p>
+
+<div class="contact-grid">
+
+<div class="contact-item">
+<h4>الهاتف</h4>
+<span>+962 0797022292</span>
+</div>
+
+<div class="contact-item">
+<h4>البريد الإلكتروني</h4>
+<span>Laithalbasgeer@yahoo.com</span>
+</div>
+
+<div class="contact-item">
+<h4>الموقع</h4>
+<span>عمّان - الأردن</span>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section style="padding:120px 8%;">
+
+<div class="title">
+<h2>الأنظمة المالية الحديثة</h2>
+<p>
+إدارة احترافية تعتمد على التكنولوجيا الحديثة والتحليل المالي الذكي لبناء مستقبل مالي مستقر.
+</p>
+</div>
+
+<div class="services">
+
+<div class="service">
+<div class="icon">💎</div>
+<h3>واجهة فاخرة</h3>
+<p>
+تصميم مستقبلي فاخر يعكس قوة العلامة التجارية ويمنح تجربة استخدام احترافية.
+</p>
+</div>
+
+<div class="service">
+<div class="icon">📡</div>
+<h3>تحليل متطور</h3>
+<p>
+استخدام أدوات وتقنيات حديثة لتحليل الأداء المالي وتحسين الكفاءة التشغيلية.
+</p>
+</div>
+
+<div class="service">
+<div class="icon">⚙️</div>
+<h3>أنظمة ذكية</h3>
+<p>
+بناء حلول مالية متكاملة تناسب المؤسسات والشركات الحديثة.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section style="padding:120px 8%;">
+
+<div class="title">
+<h2>لماذا ليث البشير؟</h2>
+<p>
+خبرة حديثة تجمع بين الاحترافية، السرعة، والتحليل المالي الذكي لبناء مستقبل مالي أقوى.
+</p>
+</div>
+
+<div class="services">
+
+<div class="service">
+<div class="icon">⚡</div>
+<h3>سرعة الإنجاز</h3>
+<p>
+تنفيذ الخدمات المحاسبية بأعلى سرعة مع الحفاظ على الجودة والدقة الكاملة.
+</p>
+</div>
+
+<div class="service">
+<div class="icon">🧠</div>
+<h3>تحليل ذكي</h3>
+<p>
+استخدام أحدث أساليب التحليل المالي لتقديم رؤية واضحة لمستقبل أعمالك.
+</p>
+</div>
+
+<div class="service">
+<div class="icon">🔒</div>
+<h3>خصوصية كاملة</h3>
+<p>
+حماية بيانات العملاء باستخدام أنظمة حديثة واحترافية عالية.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section style="padding:120px 8%;">
+
+<div class="title">
+<h2>آراء العملاء</h2>
+<p>
+بعض آراء العملاء الذين عملوا مع ليث البشير في إدارة الحسابات والتحليل المالي.
+</p>
+</div>
+
+<div class="services">
+
+<div class="service">
+<p>
+"أفضل محاسب ومستشار ضريبي تعاملنا معه، تنظيم احترافي ودقة عالية في كل شيء."
+</p>
+<h3 style="margin-top:25px;">شادي مياس</h3>
+</div>
+
+<div class="service">
+<p>
+"ساعدنا على تطوير النظام المالي بالكامل ورفع كفاءة الشركة."
+</p>
+<h3 style="margin-top:25px;">محمد السالم</h3>
+</div>
+
+<div class="service">
+<p>
+"احترافية عالية وتصميم مالي حديث يناسب الشركات الكبيرة."
+</p>
+<h3 style="margin-top:25px;">سيف العتيبي</h3>
+</div>
+
+</div>
+
+</section>
+
+<section style="padding:120px 8%;">
+
+<div class="contact">
+
+<h2>خدمات إضافية</h2>
+
+<div class="contact-grid">
+
+<div class="contact-item">
+<h4>إدارة الضرائب</h4>
+<span>حلول ضريبية احترافية للشركات والأفراد.</span>
+</div>
+
+<div class="contact-item">
+<h4>إعداد الميزانيات</h4>
+<span>إنشاء ميزانيات مالية دقيقة ومتطورة.</span>
+</div>
+
+<div class="contact-item">
+<h4>استشارات استثمارية</h4>
+<span>تحليل مالي واستشارات للمشاريع والاستثمارات.</span>
+</div>
+
+<div class="contact-item">
+<h4>إدارة الرواتب</h4>
+<span>تنظيم أنظمة الرواتب والموارد المالية.</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section style="padding:120px 8%;">
+
+<div class="title">
+<h2>واجهة مستقبلية فاخرة</h2>
+<p>
+تصميم عصري مستوحى من شركات التكنولوجيا العالمية والاستثمارات الحديثة.
+</p>
+</div>
+
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop">
+</div>
+
+</section>
+
+<section style="padding:120px 8%;">
+
+<div class="services">
+
+<div class="service">
+<div class="icon">🏆</div>
+<h3>جودة عالية</h3>
+<p>
+خدمات محاسبية بمعايير عالمية تناسب الشركات الحديثة والمؤسسات الكبرى.
+</p>
+</div>
+
+<div class="service">
+<div class="icon">🌍</div>
+<h3>حلول عالمية</h3>
+<p>
+استراتيجيات مالية عصرية مستوحاة من أفضل الشركات العالمية.
+</p>
+</div>
+
+<div class="service">
+<div class="icon">🚀</div>
+<h3>نمو أسرع</h3>
+<p>
+تحسين الأداء المالي لتسريع نمو الشركات والمشاريع المستقبلية.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 - Laith Al Bashir Royal Finance
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+  const cursor=document.querySelector(".cursor");
+  const dot=document.querySelector(".cursor-dot");
+
+  document.addEventListener("mousemove",(e)=>{
+    cursor.style.left=e.clientX+"px";
+    cursor.style.top=e.clientY+"px";
+
+    dot.style.left=e.clientX+"px";
+    dot.style.top=e.clientY+"px";
+  });
+});
+</script>
+
+<script>
+let lastScroll = 0;
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset;
+
+  if (currentScroll > lastScroll && currentScroll > 100) {
+    // نازل لتحت
+    header.classList.add("hide");
+  } else {
+    // طالع لفوق
+    header.classList.remove("hide");
+  }
+
+  lastScroll = currentScroll;
+});
+</script>
+
+<script>
+const fabBtn = document.getElementById("fabBtn");
+const fabContainer = document.querySelector(".fab-container");
+
+fabBtn.addEventListener("click", () => {
+  fabContainer.classList.toggle("active");
+});
+</script>
+
+</body>
+</html>
